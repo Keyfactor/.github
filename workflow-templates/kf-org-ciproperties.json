@@ -1,0 +1,12 @@
+{
+    "name": "Keyfactor IntegrationsWorkflow",
+    "description": "CI workflow template.",
+    "iconName": "example-icon",
+    "categories": [
+        "C#"
+    ],
+    "filePatterns": [
+        "*.cs$",
+        ".*\\.md$"
+    ]
+}
