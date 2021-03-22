@@ -8,8 +8,8 @@ on:
   push:
     #only run this workflow when pushing to a branch that has the prerelease suffix
     branches: 
-        - 'release/v*-pre*' 
-        - '!release/v[12].[0-9]+.[0-9]+' 
+        - 'release--[12].[0-9]+.[0-9]+-pre*' 
+        - '!release-[12].[0-9]+.[0-9]+' 
         
 
 
