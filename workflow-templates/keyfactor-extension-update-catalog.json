@@ -1,0 +1,8 @@
+{
+    "name": "Keyfactor Integrations Update Catalog",
+    "description": "This template will generate a catalog entry page for the integration repository.",
+    "iconName": "example-icon",
+    "categories": [
+        "Jekyll"
+    ]
+}
