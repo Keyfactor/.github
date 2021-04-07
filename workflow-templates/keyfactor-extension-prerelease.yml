@@ -85,20 +85,19 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: zendesk/action-create-release@v1
+        #uses: zendesk/action-create-release@v1 - Update when PR is approved
+        uses: keyfactor/action-create-release@786b73035fa09790f9eb11bb86834a6d7af1c256
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           release_name: Release ${{ env.RELEASE_NAME  }}
           body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+            [Changelog](../CHANGELOG.MD)
           draft: false
           prerelease: true
-          prerelease_suffix: pre
-          auto_increment_type: prerelease
+          auto_increment_type: patch
           tag_schema: semantic
+          commitish: ${{ github.sha }}
       
       - name: Upload Release Asset (x64)
         id: upload-release-asset-x64
