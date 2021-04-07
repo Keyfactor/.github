@@ -58,10 +58,11 @@ jobs:
       - name: restore nuget packages
         run: |
           nuget restore ${{ env.SOLUTION_PATH  }}
-            
+          
       - name: Create Release
         id: create_release
-        uses: zendesk/action-create-release@v1
+        #uses: zendesk/action-create-release@v1
+        uses: keyfactor/action-create-release@786b73035fa09790f9eb11bb86834a6d7af1c256
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -72,6 +73,7 @@ jobs:
           prerelease: false
           auto_increment_type: patch
           tag_schema: semantic
+          commitish: ${{ github.sha }}          
       
       #update version number of AssemblyInfo.cs file
       - name: Increment Assembly Version
