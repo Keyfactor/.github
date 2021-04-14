@@ -20,6 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          push_options: '--force'
           commit_message: Update generated README          
           commit_user_name: Keyfactor
           commit_user_email: keyfactor@keyfactor.github.io
