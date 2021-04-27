@@ -97,7 +97,7 @@ jobs:
       - name: Create NuGet Package
         run: |
           Push-Location -Path "${{ github.workspace }}\PamUtilities" -StackName "PreviousPath"
-          nuget pack .\PamUtilities.nuspec -properties "nugetRepo=https://github.com/Keyfactor/public-nuget-packages.git;nugetVersion=${{ steps.trim_version.outputs.VERSION }}"
+          nuget pack .\PamUtilities.nuspec -properties "nugetRepo=https://github.com/Keyfactor/internal-nuget-packages.git;nugetVersion=${{ steps.trim_version.outputs.VERSION }}"
           Pop-Location -StackName "PreviousPath"
 
       - name: Archive Files
