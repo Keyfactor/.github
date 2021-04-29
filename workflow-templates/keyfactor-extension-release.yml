@@ -4,12 +4,13 @@ name: Keyfactor Extension - Release
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push
-  push:
-    #only run this workflow when pushing to a branch that contains a release number. ignore -pre
+  # Triggers the workflow on pull requests closing
+  pull_request:
+    # only run this workflow when closing a PR to a branch that contains a release number. ignore -pre
     branches: 
-        - 'release-[12].[0-9]+.[0-9]+' 
-        - '!release--[12].[0-9]+.[0-9]+-pre*' 
+        - 'release-[0-9]+.[0-9]+' 
+        - '!release-[0-9]+.[0-9]+-pre' 
+    types: [closed]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,6 +19,9 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+      # run if pull request is completed and merged, or if manually dispatched
+    if:  github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
+
     # The type of runner that the job will run on
     runs-on: windows-latest
 
