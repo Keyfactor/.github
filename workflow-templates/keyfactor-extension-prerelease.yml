@@ -93,7 +93,8 @@ jobs:
             [Changelog](../CHANGELOG.MD)
           draft: false
           prerelease: true
-          auto_increment_type: patch
+          prerelease_suffix: pre
+          auto_increment_type: prerelease
           tag_schema: semantic
           commitish: ${{ github.sha }}
       
