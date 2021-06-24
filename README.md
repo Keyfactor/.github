@@ -1,4 +1,5 @@
-Shared workflow templates for Extension Release
+GitHub Action templates to support Keyfactor Integration Catalog and Release processes. Note that while this repository is publicly visible, its contents are intended
+for Keyfactor internal use.
 
 # Release
 The release workflow will checkout, setup, and build the Keyfactor extension automatically when a branch matching the release-v[1-9]\.[0-9]+\.[0-9]+ pattern.  The branch name is used to label the release in Github.  The release and source will be tagged automatically and the bump determined by the auto_increment_type setting in the workflow (default patch). The action will find the last tag (if it exists) and increment by one; otherwise, it will begin numbering at 1.0.0
@@ -14,5 +15,3 @@ Most of the template is ready to use and will dynamically find the solution file
 
 # Assumptions
 * CHANGELOG.md must be located in the root of the repository.  The release process will create a link to this file from the release to document changes/release notes. 
-
-
