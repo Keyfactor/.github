@@ -86,11 +86,14 @@ jobs:
       - name: Increment Assembly Version
         run: |
             $VersionRegex = "\d+\.\d+\.\d+"
-            $assemlyFilePath = (Get-ChildItem -Include AssemblyInfo.cs -File -Recurse).fullname
-            $filecontent = Get-Content($assemlyFilePath)
-            $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v')
-            attrib $assemlyFilePath -r
-            $filecontent -replace $VersionRegex, $newVer | Out-File $assemlyFilePath
+            $assemblyInfoFiles = (Get-ChildItem -Include AssemblyInfo.cs -File -Recurse).fullname
+            foreach ($assemblyInfoFile in $assemblyInfoFiles)
+            {
+              $filecontent = Get-Content($assemblyInfoFile)
+              $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v')
+              attrib $assemblyInfoFile -r
+              $filecontent -replace $VersionRegex, $newVer | Out-File $assemblyInfoFile
+            }
       
       - name: Execute MSBuild Commands
         run: |
