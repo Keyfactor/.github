@@ -1,0 +1,47 @@
+# This workflow will begin a new release on Github
+# It will create release and pre-release branches for the repository, with the major.minor version specified
+
+name: Start new Keyfactor release
+
+on:
+# action runs only on manual dispatch, requries version # input
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release Version (major.minor)'
+        required: true
+        default: '0.0'
+
+jobs:
+  create_branches:
+    # only run on main branch
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - name: GitHub Script creates branches
+      - uses: actions/github-script@v4.0.2
+        with:
+          script: |
+          // get the "user/repository" environment variale
+          const user_repo = ($GITHUB_REPOSITORY).split('/');
+          // get latest commit hash on main
+          const commits = await github.repos.listCommits({
+            user_repo[0], // owner
+            user_repo[1]  // repo
+          });
+          const sha = commits[0].sha;
+
+          // create release branch
+          await github.git.createRef({
+            user_repo[0], 
+            user_repo[1],
+            'refs/heads/release-$INPUT_VERSION',
+            sha
+          });
+
+          // create pre-release branch
+          await github.git.createRef({
+            user_repo[0],
+            user_repo[1],
+            'refs/heads/release-$INPUT_VERSION-pre',
+            sha
+          });
