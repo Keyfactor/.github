@@ -91,10 +91,11 @@ jobs:
         run: |
             $VersionRegex = "\d+\.\d+\.\d+"
             $assemblyInfoFiles = (Get-ChildItem -Include AssemblyInfo.cs -File -Recurse).fullname
+            $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v').Split('-')[0]
+            echo "Prepared to overwrite Assembly version to: ${newVer}"
             foreach ($assemblyInfoFile in $assemblyInfoFiles)
             {
               $filecontent = Get-Content($assemblyInfoFile)
-              $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v')
               attrib $assemblyInfoFile -r
               $filecontent -replace $VersionRegex, $newVer | Out-File $assemblyInfoFile
             }
@@ -107,7 +108,7 @@ jobs:
         if: ${{ success() }}
         run: |
            md ${{ github.workspace }}\zip\Keyfactor
-           Compress-Archive -Path ${{ github.workspace }}\${{env.project_folder}}\bin\Release\*.dll,${{ github.workspace }}\${{env.project_folder}}\bin\Release\*.json -DestinationPath ${{ github.workspace }}\zip\Keyfactor\$Env:REPO_NAME.zip -Force      
+           Compress-Archive -Path ${{ env.SOLUTION_PATH }}\${{ env.project_folder }}\bin\Release\*.dll,${{ env.SOLUTION_PATH }}\${{ env.project_folder }}\bin\Release\*.json,${{ env.SOLUTION_PATH }}\${{ env.project_folder }}\bin\Release\*.config -DestinationPath ${{ github.workspace }}\zip\Keyfactor\$Env:REPO_NAME.zip -Force      
       
       - name: Upload Release Asset (x64)
         if: ${{ success() }}
