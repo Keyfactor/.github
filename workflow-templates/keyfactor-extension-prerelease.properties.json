@@ -1,6 +1,6 @@
 {
     "name": "Keyfactor Integrations Prerelease Workflow",
-    "description": "This template will create a prerelease and upload artifacts based on repo name.",
+    "description": "This template will create a release candidate and upload artifacts based on repo name.",
     "iconName": "example-icon",
     "categories": [
         "C#"
