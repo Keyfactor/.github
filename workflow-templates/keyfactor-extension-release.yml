@@ -3,7 +3,8 @@
 name: Keyfactor Extension - Release
 
 env:
-  project_folder: <PROJECT_FOLDER_NAME>
+  SOLUTION_FOLDER: '<SOLUTION_FOLDER_NAME>'
+  PROJECT_FOLDER: '<PROJECT_FOLDER_NAME>'
 
 # Controls when the action will run. 
 on:
@@ -12,7 +13,7 @@ on:
     # only run this workflow when closing a PR to a branch that contains a release number. ignore -pre
     branches: 
         - 'release-[0-9]+.[0-9]+' 
-        - '!release-[0-9]+.[0-9]+-pre' 
+        - '!release-[0-9]+.[0-9]+-pre'
     types: [closed]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -41,12 +42,15 @@ jobs:
             $slnPath = (Get-ChildItem -Include *.sln -File -Recurse).fullname
             $relName = "${{ github.ref }}".Split("/")
             $repoName = "${{ github.repository }}".Split("/")
+            $relVersion = "${{ github.ref }}".Split("-")
             echo "Solution File Path: ${slnPath}"
             echo "SOLUTION_PATH=${slnPath}" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
             echo "Release Name: $($relName[-1])"
             echo "RELEASE_NAME=$($relName[-1])" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
             echo "Repo Name: $($repoName[-1])"
             echo "REPO_NAME=$($repoName[-1])" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
+            echo "Release Version: $($relVersion[-1])"
+            echo "RELEASE_VERSION=$($relVersion[-1])" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
         
       - uses: actions/setup-dotnet@v1
         with:
@@ -73,7 +77,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          release_name: Release ${{ env.RELEASE_NAME  }}
+          release_name: ${{ env.REPO_NAME }} ${{ env.RELEASE_VERSION }}
           body: |
             [Changelog](../CHANGELOG.MD)
           draft: false
@@ -82,15 +86,16 @@ jobs:
           tag_schema: semantic
           commitish: ${{ github.sha }}          
       
-      #update version number of AssemblyInfo.cs file
+      # update version number of AssemblyInfo.cs file
       - name: Increment Assembly Version
         run: |
             $VersionRegex = "\d+\.\d+\.\d+"
             $assemblyInfoFiles = (Get-ChildItem -Include AssemblyInfo.cs -File -Recurse).fullname
+            $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v').Split('-')[0]
+            echo "Prepared to overwrite Assembly version to: ${newVer}"
             foreach ($assemblyInfoFile in $assemblyInfoFiles)
             {
               $filecontent = Get-Content($assemblyInfoFile)
-              $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v')
               attrib $assemblyInfoFile -r
               $filecontent -replace $VersionRegex, $newVer | Out-File $assemblyInfoFile
             }
@@ -103,7 +108,11 @@ jobs:
         if: ${{ success() }}
         run: |
            md ${{ github.workspace }}\zip\Keyfactor
-           Compress-Archive -Path ${{ github.workspace }}\${{env.project_folder}}\bin\Release\*.dll,${{ github.workspace }}\${{env.project_folder}}\bin\Release\*.json -DestinationPath ${{ github.workspace }}\zip\Keyfactor\$Env:REPO_NAME.zip -Force      
+           Compress-Archive -Path `
+           ${{ env.SOLUTION_FOLDER }}\${{ env.PROJECT_FOLDER }}\bin\Release\*.dll, `
+           ${{ env.SOLUTION_FOLDER }}\${{ env.PROJECT_FOLDER }}\bin\Release\*.json, `
+           ${{ env.SOLUTION_FOLDER }}\${{ env.PROJECT_FOLDER }}\bin\Release\*.config `
+           -DestinationPath ${{ github.workspace }}\zip\Keyfactor\$Env:REPO_NAME.zip -Force      
       
       - name: Upload Release Asset (x64)
         if: ${{ success() }}
