@@ -91,18 +91,22 @@ jobs:
         run: |
             $VersionRegex = "\d+\.\d+\.\d+"
             $assemblyInfoFiles = (Get-ChildItem -Include AssemblyInfo.cs -File -Recurse).fullname
-            $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v').Split('-')[0]
-            echo "Prepared to overwrite Assembly version to: ${newVer}"
-            foreach ($assemblyInfoFile in $assemblyInfoFiles)
+            if ($assemblyInfoFiles -ne $null)
             {
-              $filecontent = Get-Content($assemblyInfoFile)
-              attrib $assemblyInfoFile -r
-              $filecontent -replace $VersionRegex, $newVer | Out-File $assemblyInfoFile
+              $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v').Split('-')[0]
+              echo "Prepared to overwrite Assembly version to: ${newVer}"
+              foreach ($assemblyInfoFile in $assemblyInfoFiles)
+              {
+                $filecontent = Get-Content($assemblyInfoFile)
+                attrib $assemblyInfoFile -r
+                $filecontent -replace $VersionRegex, $newVer | Out-File $assemblyInfoFile
+              }
             }
       
       - name: Execute MSBuild Commands
         run: |
-          MSBuild.exe $Env:SOLUTION_PATH -p:RestorePackagesConfig=false -p:Configuration=Release       
+          $newVer = "${{ steps.create_release.outputs.current_tag }}".TrimStart('v').Split('-')[0]
+          MSBuild.exe $Env:SOLUTION_PATH -p:RestorePackagesConfig=false -p:Configuration=Release -p:Version=$newVer
       
       - name: Archive Files
         if: ${{ success() }}
