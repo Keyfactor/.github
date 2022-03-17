@@ -1,0 +1,8 @@
+{
+    "name": "Keyfactor Starter Workflow",
+    "description": "This template contains a starter workflow that manages calls to other build and release workflows for most scenarios.",
+    "iconName": "example-icon",
+    "categories": [
+        "C#"
+    ]
+}
