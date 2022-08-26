@@ -4,10 +4,10 @@ on: [workflow_dispatch, push, pull_request]
 jobs:
   call-create-github-release-workflow:
     uses: Keyfactor/actions/.github/workflows/github-release.yml@main
-  catalog-update-check:
+  get-manifest-properties:
     runs-on: windows-latest
     outputs:
-      upd_cat: ${{ steps.read-json.outputs.prop }}
+      update_catalog: ${{ steps.read-json.outputs.prop }}
     steps:
       - uses: actions/checkout@v3
       - name: Read json
@@ -32,8 +32,8 @@ jobs:
     uses: Keyfactor/actions/.github/workflows/generate-readme.yml@main
 
   call-update-catalog-workflow:
-    needs: catalog-update-check
-    if: needs.catalog-update-check.outputs.upd_cat == 'True' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: get-manifest-properties
+    if: needs.get-manifest-properties.outputs.update_catalog == 'True' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     uses: Keyfactor/actions/.github/workflows/update-catalog.yml@main
     secrets: 
       token: ${{ secrets.SDK_SYNC_PAT }}
