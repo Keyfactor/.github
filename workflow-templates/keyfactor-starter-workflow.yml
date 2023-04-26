@@ -13,12 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Store json
-        id: store-json
+        id: read-json
         shell: pwsh
         run: |
           $json = Get-Content integration-manifest.json | ConvertFrom-Json
-          echo "::set-output name=update_catalog::$(echo $json.update_catalog)"
-          echo "::set-output name=integration_type::$(echo $json.integration_type)"
+          $myvar = $json.update_catalog
+          echo "update_catalog=$myvar" | Out-File -FilePath $Env:GITHUB_OUTPUT -Encoding utf8 -Append
+          $myvar = $json.integration_type
+          echo "integration_type=$myvar" | Out-File -FilePath $Env:GITHUB_OUTPUT -Encoding utf8 -Append
 
   call-dotnet-build-and-release-workflow:
     needs: [call-create-github-release-workflow]
