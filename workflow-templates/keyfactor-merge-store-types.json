@@ -1,0 +1,8 @@
+{
+  "name": "Keyfactor Merge Cert Store Types",
+  "description": "This workflow can be added to orchestrator project to merge the store type json",
+  "iconName": "example-icon",
+  "categories": [
+    "C#"
+  ]
+}
