@@ -1,8 +1,0 @@
-{
-    "name": "Keyfactor Integrations Release Workflow",
-    "description": "This template will create a production release and upload artifacts based on repo name.",
-    "iconName": "example-icon",
-    "categories": [
-        "C#"
-    ]
-}

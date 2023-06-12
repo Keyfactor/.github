@@ -1,5 +1,5 @@
 {
-  "name": "Keyfactor Integrations Workflow",
+  "name": "Keyfactor Integrations Workflow (Deprecated)",
   "description": "This template contains a starter workflow that manages calls to other build and release workflows for standard integration types. (orchestrator, pam, cagateway)",
   "iconName": "octicon rocket",
   "categories": [

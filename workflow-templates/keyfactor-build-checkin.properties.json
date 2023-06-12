@@ -1,8 +1,0 @@
-{
-    "name": "Keyfactor Check-in Auto-build",
-    "description": "This template will automatically run .NET builds for check-ins to feature branches and PRs to the Pre-Release branch.",
-    "iconName": "example-icon",
-    "categories": [
-        "C#"
-    ]
-}
