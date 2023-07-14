@@ -1,0 +1,8 @@
+{
+    "name": "Keyfactor Configure Repository Settings",
+    "description": "This template contains a starter workflow that makes calls to configuration workflows",
+    "iconName": "example-icon",
+    "categories": [
+        "C#"
+    ]
+}
