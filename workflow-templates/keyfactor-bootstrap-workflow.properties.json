@@ -3,6 +3,6 @@
     "description": "This template contains a boostrap workflow that manages calls to other build and release workflows for most scenarios.",
     "iconName": "example-icon",
     "categories": [
-        "C#"
+        "C#", "Go"
     ]
 }
