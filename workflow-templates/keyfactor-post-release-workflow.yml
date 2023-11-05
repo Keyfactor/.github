@@ -4,9 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-starter-workflow:
+  call-delete-prereleases:
     uses: keyfactor/actions/.github/workflows/kf-post-release.yml@v2
     secrets:
       token: ${{ secrets.V2BUILDTOKEN}}
-      APPROVE_README_PUSH: ${{ secrets.APPROVE_README_PUSH}}
 
