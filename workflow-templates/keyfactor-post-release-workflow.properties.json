@@ -1,0 +1,8 @@
+{
+    "name": "Keyfactor Post Release Workflow",
+    "description": "This template contains a workflow that manages calls to other build and release workflows performing post-release steps.",
+    "iconName": "example-icon",
+    "categories": [
+        "C#", "Go"
+    ]
+}
