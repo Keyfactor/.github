@@ -3,17 +3,22 @@ on: [workflow_dispatch]
 
 jobs:
   call-update-topic:
-    uses: Keyfactor/actions/.github/workflows/kf-update-topics.yml@main
+    uses: Keyfactor/actions/.github/workflows/kf-update-topics.yml@v2
     secrets:
-      token: ${{ secrets.GH_REPO_CONFIG }}
+      token: ${{ secrets.V2BUILDTOKEN }}
 
   call-update-description:
-    uses: Keyfactor/actions/.github/workflows/kf-update-description.yml@main
+    uses: Keyfactor/actions/.github/workflows/kf-update-description.yml@v2
     secrets:
-      token: ${{ secrets.GH_REPO_CONFIG }}
+      token: ${{ secrets.V2BUILDTOKEN }}
 
   call-update-teams:
-    uses: Keyfactor/actions/.github/workflows/kf-update-teams.yml@main
+    uses: Keyfactor/actions/.github/workflows/kf-update-teams.yml@v2
     secrets:
-      token: ${{ secrets.GH_REPO_CONFIG }}
+      token: ${{ secrets.V2BUILDTOKEN }}
+
+  call-set-autolink:
+    uses: Keyfactor/actions/.github/workflows/kf-configure-repo.yml@v2
+    secrets:
+      token: ${{ secrets.V2BUILDTOKEN }}
 
