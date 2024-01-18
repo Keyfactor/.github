@@ -1,7 +1,0 @@
-{
-    "name": "Keyfactor Integrations Public Release NuGet Package Workflow",
-    "description": "This template will build and package a NuGet package and publicly release it to the package repository on GitHub.",
-    "categories": [
-        "C#"
-    ]
-}

@@ -1,7 +1,0 @@
-{
-    "name": "Keyfactor Integrations Internal NuGet Package Workflow",
-    "description": "This template will build and package a NuGet package and add it to the internal package repository on GitHub.",
-    "categories": [
-        "C#"
-    ]
-}
