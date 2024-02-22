@@ -180,3 +180,4 @@ This project may contain trademarks or logos for projects, products, or services
 
 EJBCA® is a registered trademark owned by PrimeKey Solutions AB, a wholly-owned subsidiary of Keyfactor Inc. 
 
+All other trademarks, registered trademarks, product names, and company names mentioned on this site are the property of their respective owners. Use of any of these Intellectual Property rights does not imply endorsement or affiliation. 
