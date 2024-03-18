@@ -8,7 +8,6 @@
 ---
 For help to easily browse through our Git repositories, see below. If you want to learn more about Keyfactor, visit [keyfactor.com](https://www.keyfactor.com/). 
 
----
 ### Open-source editions of EJBCA and SignServer 
 Our PKI and signing solutions are available as free and open-source software. 
 
@@ -17,8 +16,6 @@ Our PKI and signing solutions are available as free and open-source software.
 - Open-source signing software - [See **SignServer Community** and related tools](https://github.com/search?q=org%3AKeyfactor+signserver&type=repositories&s=stars).
 
 If you are looking for Bouncy Castle Cryptographic APIs, visit [Bouncy Castle on GitHub](https://github.com/bcgit). 
-
----
 
 ### Extensions and Plugins for Command and Signum
 <details>
