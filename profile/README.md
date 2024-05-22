@@ -5,11 +5,11 @@ Delivering identity-first security for every device, workload, and thing. Becaus
 
 ---
 
-The Integrations Team at Keyfactor is dedicated to seamlessly connecting Keyfactor's cybersecurity and identity management solutions with leading third-party Certificate Authorities (CAs) such as DigiCert, among others. Our primary mission is to enhance Keyfactor's platform by developing and maintaining robust "Gateways" that facilitate the integration with these external CAs. This ensures our clients have a wide array of trusted certificate options for their security needs.
+The Integrations Team at Keyfactor is dedicated to seamlessly connecting Keyfactor's cybersecurity and identity management solutions with leading third-party Certificate Authorities (CAs) such as DigiCert, among others. Our primary mission is to enhance Keyfactor's platform by developing and maintaining robust Gateways that facilitate the integration with these external CAs. This ensures our clients have a wide array of trusted certificate options for their security needs.
 
 Additionally, we specialize in the creation and deployment of Orchestrators which are critical to deploying and managing certificates across a diverse set of endpoints. Our Orchestrators enable automated certificate installation, renewal, and lifecycle management on various platforms, including but not limited to, Internet Information Services (IIS), Load Balancers, and Firewalls. This capability ensures that our clients can maintain a high level of security and compliance across their digital infrastructure with minimal manual intervention.
 
-The CA Gateways, Orchestrators, PAM Providers and other tools are developed and released on GitHub to encourage community support in development of additional extenstions and plugins for the Keyfactor Command Platform.
+The CA Gateways, Orchestrators, PAM Providers and other tools are developed and released on GitHub to encourage community support in development of additional extensions and plugins for the Keyfactor Command Platform.
 
 Explore some of our offerings below
 
@@ -212,6 +212,8 @@ If you are looking for Bouncy Castle Cryptographic APIs, visit [Bouncy Castle on
 ## Integrations Catalog
 For a complete list of our orchestrator, PAM provider, and CA Gateway integrations for Command, [visit our catalog](https://keyfactor.github.io/integrations-catalog/).
 
+## Keyfactor Terraform Provider (IaC)
+The Keyfactor Terraform Provider enables management of Keyfactor resources utilizing HashiCorp Terraform.  The download and instructions for use can be found in the https://github.com/keyfactor-pub/terraform-provider-keyfactor repository.
 ### Trademarks
 This project may contain trademarks or logos for projects, products, or services. Any use of third-party trademarks or logos are subject to those third-party's policies.
 
