@@ -1,5 +1,5 @@
 # Keyfactor
-<img src="https://github.com/Keyfactor/.github/blob/main/profile/wearekeyfactor_cover.jpg"/>
+<img src="wearekeyfactor_cover.jpg"/>
 
 Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen.
 
