@@ -1,14 +1,14 @@
-# Keyfactor
-<!-- img src="logo-temp.png" height=120/>-->
-<!-- <img src="https://github.com/Keyfactor/.github-private/blob/main/profile/wearekeyfactor_cover.jpg"/>
--->
-<!-- <img src="wearekeyfactor_cover.jpg"/>-->
+# [Keyfactor](https://keyfactor.com)
+<img src="wearekeyfactor_cover.jpg"/>
 
-#### _Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen._
+Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen.
+
 ---
-For help to easily browse through our Git repositories, see below. If you want to learn more about Keyfactor, visit [keyfactor.com](https://www.keyfactor.com/). 
 
-### Open-source editions of EJBCA and SignServer 
+Explore some of our offerings below
+
+## Open-source editions of EJBCA and SignServer 
+
 Our PKI and signing solutions are available as free and open-source software. 
 
 - Open-source PKI software - [See **EJBCA Community** and related tools](https://github.com/search?q=org%3AKeyfactor%20ejbca&type=repositories&s=stars).
@@ -17,7 +17,11 @@ Our PKI and signing solutions are available as free and open-source software.
 
 If you are looking for Bouncy Castle Cryptographic APIs, visit [Bouncy Castle on GitHub](https://github.com/bcgit). 
 
-### Extensions and Plugins for Command and Signum
+## Extensions and Plugins for Command and Signum
+To ensure users have a wide array of trusted certificate options for their security needs, Keyfactor supports the integration with multiple external CAs. Additionally, our Orchestrator support enables users to manage certificates across a diverse set of endpoints to maintain a high level of security and compliance across their digital infrastructure with minimal manual intervention.
+
+The CA Gateways, Orchestrators, PAM Providers, and other tools are developed and released on GitHub to encourage community support in the development of additional extensions and plugins for the Keyfactor Command Platform.
+
 <details>
 	<summary>Orchestrators</summary>
 
@@ -166,14 +170,49 @@ If you are looking for Bouncy Castle Cryptographic APIs, visit [Bouncy Castle on
 </table>
 
 </details> 
+<details>
+	<summary>EJBCA</summary>
+
+# [All EJBCA Repositories](https://github.com/orgs/Keyfactor/repositories?q=ejbca&type=public&language=&sort=stargazers)
+
+<table>
+  <tr>
+    <td colspan=3>
+      Some of the most starred EJBCA Repositories
+    </td>
+  </tr>
+    <td>
+      <a href="https://github.com/Keyfactor/ejbca-vault-pki-engine">
+        <img src="https://hub.docker.com/api/media/repos_logo/v1/library%2Fvault" alt="CEJBCA PKI Vault" title="EJBCA PKI Vault" width="75">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/Keyfactor/ejbca-cert-manager-issuer">
+        <img src="https://github.com/cert-manager/cert-manager/raw/master/logo/logo-small.png" alt="EJBCA Cert Manager Issuer" title="EJBCA Cert Manager Issuer" width="75">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/Keyfactor/ejbca-k8s-csr-signer">
+        <img src="https://kubernetes.io/images/favicon.png" alt="Kubernetes logo" title="K8s" align="left" height="75" >
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan=3>
+      <a href="https://github.com/orgs/Keyfactor/repositories?q=ejbca&type=public&language=&sort=stargazers">Click here for our full list of EJBCA repositories</a>
+    </td>
+  </tr>
+</table>
+
+</details> 
 
 
-### Integrations Catalog
-For a complete list of our orchestrator, PAM provider, and ca-gateway integrations for Command, [visit our catalog](https://keyfactor.github.io/integrations-catalog/).
+## Integrations Catalog
+For a complete list of our orchestrator, PAM provider, and CA Gateway integrations for Command, [visit our catalog](https://keyfactor.github.io/integrations-catalog/).
 
-
----
-## Trademarks
+## Keyfactor Terraform Provider (IaC)
+The Keyfactor Terraform Provider enables the management of Keyfactor resources utilizing HashiCorp Terraform.  The download and instructions for use can be found in the [Keyfactor Terraform Provider](https://github.com/keyfactor-pub/terraform-provider-keyfactor) repository.
+### Trademarks
 This project may contain trademarks or logos for projects, products, or services. Any use of third-party trademarks or logos is subject to those third-party's policies.
 
 EJBCA® is a registered trademark owned by PrimeKey Solutions AB, a wholly-owned subsidiary of Keyfactor Inc. 
