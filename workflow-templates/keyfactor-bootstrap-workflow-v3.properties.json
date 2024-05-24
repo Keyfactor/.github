@@ -1,0 +1,8 @@
+{
+    "name": "Keyfactor v3 Bootstrap Workflow",
+    "description": "This template contains an updated boostrap workflow that manages calls to other build and release workflows for most scenarios. It uses the new doctool generator and requires additional updates to the repository file set.",
+    "iconName": "example-icon",
+    "categories": [
+        "C#", "Go"
+    ]
+}
