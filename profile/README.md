@@ -5,15 +5,14 @@ Delivering identity-first security for every device, workload, and thing. Becaus
 
 ---
 
-The tools we make available on GitHub automate certificate management and facilitate security across diverse platforms, ensuring our clients have trusted certificate options and maintain high security with minimal manual intervention.
-
-Explore some of our offerings at the links below.
+We offer Public Key Infrastructure (PKI) and Digital Signing tools on GitHub that automate certificate issuance and management, as well as signing code and documents. These tools facilitate security across diverse platforms, ensuring our clients have trusted certificate and signing options and can maintain high security with minimal manual intervention.
+You can find our offerings at the links below.
 
 ## Open-source editions of EJBCA and SignServer 
 
 Our PKI and signing solutions are available as free and open-source software. 
 
-- Open-source PKI software - [EJBCA Community Edition and related tools](https://github.com/search?q=org%3AKeyfactor%20ejbca&type=repositories&s=stars).
+- Open-source PKI software - [EJBCA Community Edition and related add-on tools](https://github.com/search?q=org%3AKeyfactor%20ejbca&type=repositories&s=stars).
 
 - Open-source signing software - [SignServer Community Edition and related add-ons tools](https://github.com/search?q=org%3AKeyfactor+signserver&type=repositories&s=stars).
 
