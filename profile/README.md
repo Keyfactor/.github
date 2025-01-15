@@ -3,6 +3,8 @@
 
 Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen.
 
+<img src="tech-days-2025.png"/>
+
 ---
 
 We offer Public Key Infrastructure (PKI) and Digital Signing tools on GitHub that automate certificate issuance and management, as well as signing code and documents. These tools facilitate security across diverse platforms, ensuring our clients have trusted certificate and signing options and can maintain high security with minimal manual intervention.
