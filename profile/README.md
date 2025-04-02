@@ -2,8 +2,9 @@
 <img src="wearekeyfactor_cover.jpg"/>
 
 Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen.
-<a href="https://www.keyfactor.com/events/tech-days-2025/">
-    <img src="tech-days-2025.png"/>
+
+<a href="https://www.keyfactor.com/pqc-comic-book">
+    <img src="PKIAdminComic.png"/>
 </a>
 
 
