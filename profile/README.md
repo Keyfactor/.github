@@ -212,6 +212,10 @@ If you are looking for Bouncy Castle Cryptographic APIs, visit [Bouncy Castle on
 ## Command and Signum Integrations Catalog
 For a complete list of our orchestrator, PAM provider, and ca-gateway integrations for Command and Signum, [visit our catalog](https://keyfactor.github.io/integrations-catalog/).
 
+## Additional Keyfactor Repositories
+
+Additional Keyfactor-managed repositories, including the experimental preview of the MCP Server to enable Agentic AI integration with Keyfactor Command, are hosted at https://github.com/keyfactor-research
+
 ## Keyfactor Terraform Provider (IaC)
 The Keyfactor Terraform Provider enables management of Keyfactor resources utilizing HashiCorp Terraform.  The download and instructions for use can be found in the https://github.com/keyfactor-pub/terraform-provider-keyfactor repository.
 ### Trademarks
