@@ -1,12 +1,11 @@
 ﻿# Keyfactor
-<img src="wearekeyfactor_cover.jpg"/>
+<img src="ghbanner.jpg"/>
 
 Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen.
 
-<a href="https://www.keyfactor.com/pqc-comic-book">
-    <img src="PKIAdminComic.png"/>
+<a href="https://keyfactor.com/47days">
+    <img src="pqcomic.jpg"/>
 </a>
-
 
 ---
 
