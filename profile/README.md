@@ -3,8 +3,12 @@
 
 Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen.
 
+<a href="https://www.keyfactor.com/tech-days/">
+  <img src="td-github-2.png" alt="Register for Keyfactor Tech Days 2027, Feb. 25-27, 2027 in San Diego, California.">
+</a>
+
 <a href="https://keyfactor.com/47days">
-    <img src="pqcomic.jpg"/>
+    <img src="pqcomic.jpg" alt="Download our comic book '47 Days', covering short-lived PKI certificates and post-quantum readiness."/>
 </a>
 
 ---
