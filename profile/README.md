@@ -1,14 +1,13 @@
 ﻿# Keyfactor
 <img src="ghbanner.jpg"/>
 
-Delivering identity-first security for every device, workload, and thing. Because when you establish digital trust, great things happen.
+The world runs on trust. We keep it that way.
+
+Keyfactor is the leader in trust infrastructure for AI and machines. The platform equips enterprises to take control of the machine identities and cryptography that safeguard every digital interaction. By bringing fragmented tools and assets into a single control plane, security teams can see their cryptographic landscape, find and remediate risk exposure, roll out compliant and quantum-safe cryptography, and issue a cryptographic identity to every machine, workload, and AI. Trusted by the largest enterprises and government agencies, Keyfactor delivers the resilient foundation organizations need to keep running uninterrupted in the AI and quantum era. 
+
 
 <a href="https://www.keyfactor.com/tech-days/">
   <img src="td-github-2.png" alt="Register for Keyfactor Tech Days 2027, Feb. 25-27, 2027 in San Diego, California.">
-</a>
-
-<a href="https://keyfactor.com/47days">
-    <img src="pqcomic.jpg" alt="Download our comic book '47 Days', covering short-lived PKI certificates and post-quantum readiness."/>
 </a>
 
 ---
@@ -224,7 +223,10 @@ The Keyfactor Terraform Provider enables management of Keyfactor resources utili
 ### Trademarks
 EJBCA® is a registered trademark owned by PrimeKey Solutions AB, a wholly-owned subsidiary of Keyfactor Inc. 
 
- 
-
 All other trademarks, registered trademarks, product names, and company names mentioned on this site are the property of their respective owners. Use of any of these Intellectual Property rights does not imply endorsement or affiliation. 
 
+# Read 47 Days and learn about modern PKI certificate lifetimes.
+
+<a href="https://keyfactor.com/47days">
+    <img src="pqcomic.jpg" alt="Download our comic book '47 Days', covering short-lived PKI certificates and post-quantum readiness."/>
+</a>
